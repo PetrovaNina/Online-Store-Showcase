@@ -64,12 +64,20 @@ main {
     background-color: #5a5a5a;
 }
 
+/* End of conditions */
+
 .content {
     display: grid;
     grid-template-columns: 250px 250px 250px;
     gap: 5px 10px;
     width: 770px;
 }
+
+.item {
+    position: relative;
+}
+
+/* Content items conditions */
 
 .item:nth-child(8n + 1), .item:nth-child(8n + 3) {
     grid-column: 1 / 2;
@@ -95,9 +103,7 @@ main {
     grid-column: 1 / 4;
 }
 
-.item {
-    position: relative;
-}
+/* End of conditions */
 
 .item-image {
     height: 290px;
@@ -207,6 +213,8 @@ main {
     display: grid;
     gap: 5px;
 }
+
+/* Rating items conditions */
 /* Change the order of rating items by selecting the checkbox */
 
 .rating-checkbox:checked ~ .rating-values > .rating-values-item {
@@ -236,6 +244,8 @@ main {
     appearance: none;
 }
 
+/* End of conditions */
+
 meter::before {
     position: absolute;
     top: 3px;
@@ -243,6 +253,8 @@ meter::before {
     content: "";
     border: 1px solid rgb(182, 182, 182);
 }
+
+/* Meter conditions */
 
 meter.green::before {
     width: 100%;
@@ -265,6 +277,8 @@ meter.red::before {
     font-weight: bold;
     text-align: right;
 }
+
+/* End of conditions */
 
 footer {
     display: flex;
