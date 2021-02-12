@@ -177,6 +177,31 @@ main {
     grid-column: 1 / 2;
     position: relative;
     width: 90%;
+    appearance: none;
+}
+
+meter::before {
+    position: absolute;
+    top: 3px;
+    height: 20px;
+    content: "";
+    border: 1px solid rgb(182, 182, 182);
+}
+
+meter.green::before {
+    width: 100%;
+    background: linear-gradient(to left, #ffffff, #01e86e);
+    background-color: #01e86e;
+}
+
+meter.yellow::before {
+    width: 95%;
+    background: linear-gradient(to left, #ffffff, #fff601);
+}
+
+meter.red::before {
+    width: 55%;
+    background: linear-gradient(to left, #ffffff, #e80802);
 }
 
 .rating-values-item span {
