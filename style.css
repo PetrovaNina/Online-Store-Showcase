@@ -172,6 +172,27 @@ main {
     display: grid;
     gap: 5px;
 }
+/* Change the order of rating items by selecting the checkbox */
+
+.rating-checkbox:checked ~ .rating-values > .rating-values-item {
+    order: var(--default);
+}
+
+.rating-values-item:nth-child(4) {
+    --default: 4;
+}
+
+.rating-values-item:nth-child(3) {
+    --default: 1;
+}
+
+.rating-values-item:nth-child(2) {
+    --default: 3;
+}
+
+.rating-values-item:nth-child(1) {
+    --default: 2;
+}
 
 .rating-values-item meter {
     grid-column: 1 / 2;
