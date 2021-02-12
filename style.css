@@ -145,6 +145,7 @@ main {
 .rating-order {
     grid-column: 1 / 2;
     width: 100%;
+    padding-right: 5px;
     font-size: 18px;
     line-height: 2;
     text-align: right;
@@ -153,10 +154,44 @@ main {
 .rating-checkbox {
     grid-column: 2 / 3;
     position: relative;
+    width: 15px;
     height: 15px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin: 10px 0 30px 5px;
 }
+
+/* Checkbox conditions*/
+
+.rating-checkbox:checked {
+    visibility: hidden;
+}
+
+.rating-checkbox:checked::before {
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    visibility: visible;
+    content: "";
+    background: linear-gradient(to bottom, #d1e9fc, #80c1f7);
+    border-radius: 20%;  
+    border: 1px solid rgb(87, 87, 87);
+}
+
+.rating-checkbox:checked::after {
+    position: absolute;
+    left: 3px;
+    bottom: -2px;
+    width: 17px;
+    height: 25px;
+    visibility: visible;
+    content: "";
+    background-image: url(images/checkmark.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* End of conditions */
 
 .rating-values {
     grid-column: 1 / 3;
