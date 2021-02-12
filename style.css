@@ -43,6 +43,10 @@ main {
     flex-direction: column;
 }
 
+.filter-radio {
+    display: none;
+}
+
 .filter-button {
     padding: 23px 20px 20px 15px;
     text-align: left;
@@ -50,8 +54,14 @@ main {
     box-shadow: inset 0 -1.5px #ffffff;
 }
 
-.filter-radio {
-    display: none;
+/* Filter buttons conditions */
+
+#abyssinian:checked ~ .filter > [for="abyssinian"],
+#british:checked ~ .filter > [for="british"],
+#russianBlue:checked ~ .filter > [for="russianBlue"],
+#siamese:checked ~ .filter > [for="siamese"] {
+    color: #ffffff;
+    background-color: #5a5a5a;
 }
 
 .content {
