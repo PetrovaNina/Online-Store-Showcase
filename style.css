@@ -121,10 +121,10 @@ main {
 
 /* Change the styles of items by clicking a filter button */
 
-#abyssinian:checked ~ .content.item-image:not([alt="Абиссинская"]),
-#british:checked ~ .content.item-image:not([alt="Британская"]),
-#russianBlue:checked ~ .content.item-image:not([alt="Русская голубая"]),
-#siamese:checked ~ .content.item-image:not([alt="Сиамская"]) {
+#abyssinian:checked ~ .content .item-image:not([alt="Абиссинская"]),
+#british:checked ~ .content .item-image:not([alt="Британская"]),
+#russianBlue:checked ~ .content .item-image:not([alt="Русская голубая"]),
+#siamese:checked ~ .content .item-image:not([alt="Сиамская"]) {
     opacity: 0.5;
 }
 
