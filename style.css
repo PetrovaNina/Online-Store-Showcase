@@ -8,19 +8,21 @@ body {
     margin: 0 auto;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
     background-color: #ebebeb;
 }
 
 header {
-    padding: 30px 0 10px;
-    font-size: 22px;
+    padding: 1.66em 0 0.55em;
+    font-size: 1.22em;
     text-align: center;
 }
 
 main {
     display: flex;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 0.8em;
     /* For footer "sticking" the borrom of the page if content is not enough */
     min-height: 60vh;
     margin-top: 20px;
@@ -30,11 +32,11 @@ main {
 .display {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 0.8em;
 }
 
 .sidebar {
-    font-size: 24px;
+    font-size: 1.33em;
     background-color: #d9d9d9;
 }
 
@@ -48,7 +50,7 @@ main {
 }
 
 .filter-button {
-    padding: 23px 20px 20px 15px;
+    padding: 0.8em;
     text-align: left;
     border-bottom: 1px solid #5a5a5a;
     box-shadow: inset 0 -1.5px #ffffff;
@@ -64,6 +66,7 @@ main {
 #all:checked~.filter>[for="all"] {
     color: #ffffff;
     background-color: #5a5a5a;
+    box-shadow: inset 0 -1.5px #0202023d;
 }
 
 
@@ -71,13 +74,14 @@ main {
 
 .content {
     display: grid;
-    grid-template-columns: 250px 250px 250px;
-    gap: 5px 10px;
-    width: 770px;
+    gap: 0.55em;
+    max-width: 770px;
 }
 
 .item {
     position: relative;
+    height: 32vw;
+    max-height: 250px;
 }
 
 
@@ -113,7 +117,7 @@ main {
 /* End of conditions */
 
 .item-image {
-    height: 290px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     background-position: center;
@@ -128,7 +132,7 @@ main {
     left: 0;
     padding: 20px 15px;
     content: attr(data-img);
-    font-size: 25px;
+    font-size: 1.4em;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -146,12 +150,12 @@ main {
 .rating {
     display: grid;
     grid-template-columns: 10fr 1fr;
-    padding: 5px 30px 15px 10px;
+    padding: 0.8em;
 }
 
 .rating-name {
     margin: 0;
-    font-size: 30px;
+    font-size: 1.66em;
     text-transform: uppercase;
     font-weight: lighter;
     color: #db0606;
@@ -161,17 +165,18 @@ main {
     grid-column: 1 / 2;
     width: 100%;
     padding-right: 5px;
-    font-size: 18px;
+    font-size: inherit;
     line-height: 2;
     text-align: right;
 }
 
 .rating-checkbox {
     grid-column: 2 / 3;
+    justify-self: right;
     position: relative;
-    width: 15px;
-    height: 15px;
-    margin: 10px 0 30px 5px;
+    width: 1.33em;
+    height: 1.33em;
+    margin: auto 0;
 }
 
 
@@ -184,13 +189,13 @@ main {
 .rating-checkbox:checked::before {
     position: absolute;
     left: 0;
-    width: 13px;
-    height: 13px;
+    width: 1.29em;
+    height: 1.29em;
     visibility: visible;
     content: "";
     background: linear-gradient(to bottom, #d1e9fc, #80c1f7);
     border-radius: 20%;
-    border: 1px solid rgb(87, 87, 87);
+    border: 0.03em solid rgb(87, 87, 87);
 }
 
 .rating-checkbox:checked::after {
@@ -213,9 +218,9 @@ main {
 .rating-values {
     grid-column: 1 / 3;
     display: grid;
-    margin: 0;
+    margin: 0.8em 0 0;
     padding: 0;
-    gap: 25px;
+    gap: 1em;
     border: none;
 }
 
@@ -264,7 +269,7 @@ main {
 meter::before {
     position: absolute;
     top: 3px;
-    height: 20px;
+    height: 100%;
     content: "";
     border: 1px solid rgb(182, 182, 182);
 }
@@ -313,4 +318,77 @@ footer address {
 
 footer .dev-link {
     color: #5a5a5a;
+}
+
+@media (max-width: 768px) {
+    body,
+    .rating-checkbox {
+        font-size: 15px;
+    }
+    .rating-checkbox::before {
+        font-size: 14px;
+        border: 0.5px;
+    }
+    header {
+        padding: 0;
+    }
+    main {
+        flex-direction: column-reverse;
+    }
+    .display {
+        flex-direction: column;
+    }
+    .rating {
+        width: 100vw;
+    }
+    .filter {
+        flex-flow: row wrap;
+        word-break: break-word;
+        font-size: 0.99em;
+    }
+    .filter-button {
+        flex: 0 1 25%;
+        text-align: center;
+        padding: 1em 0.5em;
+        border: 1px solid #5a5a5a2c;
+    }
+    .filter-button:last-child {
+        flex: 1 0 100%;
+    }
+    .rating-name {
+        font-size: 1.33em;
+    }
+    .rating-values {
+        margin: 0;
+    }
+    footer {
+        justify-content: space-between;
+        padding: 10px 1em;
+    }
+    footer :not(.dev-link) {
+        flex: 0 1 30%;
+    }
+    footer address {
+        text-align: right;
+    }
+}
+
+@media (max-width: 500px) {
+    body,
+    .rating-checkbox {
+        font-size: 13px;
+    }
+    .rating-checkbox::before {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    body,
+    .rating-checkbox {
+        font-size: 10px;
+    }
+    .rating-checkbox::before {
+        font-size: 9px;
+    }
 }
