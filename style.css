@@ -54,15 +54,18 @@ main {
     box-shadow: inset 0 -1.5px #ffffff;
 }
 
+
 /* Filter buttons conditions */
 
-#abyssinian:checked ~ .filter > [for="abyssinian"],
-#british:checked ~ .filter > [for="british"],
-#russianBlue:checked ~ .filter > [for="russianBlue"],
-#siamese:checked ~ .filter > [for="siamese"] {
+#abyssinian:checked~.filter>[for="abyssinian"],
+#british:checked~.filter>[for="british"],
+#russianBlue:checked~.filter>[for="russianBlue"],
+#siamese:checked~.filter>[for="siamese"],
+#all:checked~.filter>[for="all"] {
     color: #ffffff;
     background-color: #5a5a5a;
 }
+
 
 /* End of conditions */
 
@@ -77,9 +80,11 @@ main {
     position: relative;
 }
 
+
 /* Content items conditions */
 
-.item:nth-child(8n + 1), .item:nth-child(8n + 3) {
+.item:nth-child(8n + 1),
+.item:nth-child(8n + 3) {
     grid-column: 1 / 2;
 }
 
@@ -91,7 +96,8 @@ main {
     grid-column: 2 / 3;
 }
 
-.item:nth-child(8n + 5), .item:nth-child(8n + 7) {
+.item:nth-child(8n + 5),
+.item:nth-child(8n + 7) {
     grid-column: 3 / 4;
 }
 
@@ -103,6 +109,7 @@ main {
     grid-column: 1 / 4;
 }
 
+
 /* End of conditions */
 
 .item-image {
@@ -111,6 +118,7 @@ main {
     object-fit: cover;
     background-position: center;
 }
+
 
 /* Show item description by hover itself */
 
@@ -125,12 +133,13 @@ main {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 /* Change the styles of items by clicking a filter button */
 
-#abyssinian:checked ~ .content .item-image:not([alt="Абиссинская"]),
-#british:checked ~ .content .item-image:not([alt="Британская"]),
-#russianBlue:checked ~ .content .item-image:not([alt="Русская голубая"]),
-#siamese:checked ~ .content .item-image:not([alt="Сиамская"]) {
+#abyssinian:checked~.content .item-image:not([alt="Абиссинская"]),
+#british:checked~.content .item-image:not([alt="Британская"]),
+#russianBlue:checked~.content .item-image:not([alt="Русская голубая"]),
+#siamese:checked~.content .item-image:not([alt="Сиамская"]) {
     opacity: 0.5;
 }
 
@@ -165,6 +174,7 @@ main {
     margin: 10px 0 30px 5px;
 }
 
+
 /* Checkbox conditions*/
 
 .rating-checkbox:checked {
@@ -179,7 +189,7 @@ main {
     visibility: visible;
     content: "";
     background: linear-gradient(to bottom, #d1e9fc, #80c1f7);
-    border-radius: 20%;  
+    border-radius: 20%;
     border: 1px solid rgb(87, 87, 87);
 }
 
@@ -196,6 +206,7 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 
 /* End of conditions */
 
@@ -214,10 +225,13 @@ main {
     gap: 5px;
 }
 
+
 /* Rating items conditions */
+
+
 /* Change the order of rating items by selecting the checkbox */
 
-.rating-checkbox:checked ~ .rating-values > .rating-values-item {
+.rating-checkbox:checked~.rating-values>.rating-values-item {
     order: var(--default);
 }
 
@@ -244,6 +258,7 @@ main {
     appearance: none;
 }
 
+
 /* End of conditions */
 
 meter::before {
@@ -253,6 +268,7 @@ meter::before {
     content: "";
     border: 1px solid rgb(182, 182, 182);
 }
+
 
 /* Meter conditions */
 
@@ -277,6 +293,7 @@ meter.red::before {
     font-weight: bold;
     text-align: right;
 }
+
 
 /* End of conditions */
 
