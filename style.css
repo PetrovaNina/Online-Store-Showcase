@@ -80,8 +80,8 @@ main {
 
 .item {
     position: relative;
-    height: 32vw;
-    max-height: 250px;
+    height: 40vw;
+    max-height: 270px;
 }
 
 
@@ -128,9 +128,9 @@ main {
 
 .item:hover:after {
     position: absolute;
-    top: 190px;
+    bottom: 0.5em;
     left: 0;
-    padding: 20px 15px;
+    padding: 1em;
     content: attr(data-img);
     font-size: 1.4em;
     color: #ffffff;
