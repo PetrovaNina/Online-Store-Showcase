@@ -310,3 +310,7 @@ footer address {
     font-style: normal;
     color: #1634a3;
 }
+
+footer .dev-link {
+    color: #5a5a5a;
+}
